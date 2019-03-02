@@ -22,9 +22,7 @@ public class Calculator {
 			while (i < charr.length && charr[i] == Character.MIN_VALUE)
 				i++;
 			char op = operator.getValue();
-			System.out.println(op);
 			Operand operand = new Operand(charr);
-			System.out.println(operand.getValue());
 			while (i < charr.length && charr[i] == Character.MIN_VALUE)
 				i++;
 			switch (op){
@@ -60,16 +58,15 @@ public class Calculator {
 			Calculator calculator = new Calculator();
 			Scanner sc = new Scanner(System.in);
 			calculator.setStr();
+			if (calculator.getStr().equals("q"))
+				break;
 			if (calculator.inputIsValid()) {
 				calculator.calculate();
 				System.out.println("Answer is: " + calculator.getRes());
 			} else {
 				System.out.println("Your input is invalid!");
 			}
-			System.out.println("Would you like to try again?(Print y or Y to continue)");
-			String answer = sc.next();
-			if (!answer.equals("y") && !answer.equals("Y"))
-				break;
+			System.out.println("To quit the program enter press q");
 		}
 	}
 }
