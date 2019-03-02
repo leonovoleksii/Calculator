@@ -34,7 +34,7 @@ public class Calculator {
 				result = operand1.getValue() * operand2.getValue();
 				break;
 			case '/':
-				result = operand1.getValue() / operand2.getValue();
+				result = (float)operand1.getValue() / (float)operand2.getValue();
 				break;
 		}
 	}
