@@ -55,10 +55,10 @@ public class Calculator {
 	}
 
 	public static void main(String[] args) {
-		Calculator calculator = new Calculator();
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Hello! I am calculator! What would you like to calculate?");
 		while (true) {
+			Calculator calculator = new Calculator();
+			Scanner sc = new Scanner(System.in);
 			calculator.setStr();
 			if (calculator.inputIsValid()) {
 				calculator.calculate();
