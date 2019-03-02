@@ -1,11 +1,12 @@
 public class Operand {
 	private int value;
 	public Operand(char[] str) {
-		int i = 0;
-		while ((i < str.length) && !(str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/')) {
-			value = value * 10 + (int)str[i] - (int)'0';
-			str[i] = Character.MIN_VALUE;
-			i++;
+		if (str[0] == 'I' || str[i] == 'V' || str[i] == 'X') {
+			RomanNumber number = new RomanNumber(str);
+			value = number.getValue();
+		} else {
+			ArabicNumber number = new ArabicNumber(str);
+			value = number.getValue();
 		}
 	}
 	

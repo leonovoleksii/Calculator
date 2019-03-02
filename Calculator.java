@@ -22,7 +22,6 @@ public class Calculator {
 		str = str.substring(1, str.length());
 		charr = str.toCharArray();
 		Operand operand2 = new Operand(charr);
-		System.out.println(operand2.getValue());
 		str = arrToStr(charr);
 		switch (operator.getValue()){
 			case '+':
