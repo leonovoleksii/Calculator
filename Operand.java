@@ -1,7 +1,7 @@
 public class Operand {
 	private int value;
 	public Operand(char[] str) {
-		if (str[0] == 'I' || str[i] == 'V' || str[i] == 'X') {
+		if (str[0] == 'I' || str[0] == 'V' || str[0] == 'X') {
 			RomanNumber number = new RomanNumber(str);
 			value = number.getValue();
 		} else {
