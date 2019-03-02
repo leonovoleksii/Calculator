@@ -34,6 +34,10 @@ public class Calculator {
 				result = operand1.getValue() * operand2.getValue();
 				break;
 			case '/':
+				if (operand2.getValue() == 0) {
+					System.out.println("Can't divide by zero!");
+					break;
+				}
 				result = (float)operand1.getValue() / (float)operand2.getValue();
 				break;
 		}
