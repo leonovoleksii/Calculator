@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Calculator {
 	private String str;
-	private double result;
+	private double result = 0;
 	public void setStr() {
 		System.out.print("Enter here: ");
 		Scanner sc = new Scanner(System.in);
@@ -16,41 +16,31 @@ public class Calculator {
 	}
 	public void calculate() {
 		char charr[] = getStr().toCharArray();
-		Operand operand1 = new Operand(charr);
-		str = arrToStr(charr);
-		Operator operator = new Operator(str);
-		str = str.substring(1, str.length());
-		charr = str.toCharArray();
-		Operand operand2 = new Operand(charr);
-		str = arrToStr(charr);
-		switch (operator.getValue()){
-			case '+':
-				result = operand1.getValue() + operand2.getValue();
-				break;
-			case '-':
-				result = operand1.getValue() - operand2.getValue();
-				break;
-			case '*':
-				result = operand1.getValue() * operand2.getValue();
-				break;
-			case '/':
-				if (operand2.getValue() == 0) {
-					System.out.println("Can't divide by zero!");
+		int i = 0;
+		while (i < charr.length) {
+			Operator operator = new Operator(charr);
+			while (i < charr.length && charr[i] == Character.MIN_VALUE)
+				i++;
+			char op = operator.getValue();
+			System.out.println(op);
+			Operand operand = new Operand(charr);
+			System.out.println(operand.getValue());
+			while (i < charr.length && charr[i] == Character.MIN_VALUE)
+				i++;
+			switch (op){
+				case '+':
+					result += operand.getValue();
 					break;
-				}
-				result = (float)operand1.getValue() / (float)operand2.getValue();
-				break;
+				case '-':
+					result -= operand.getValue();
+					break;
+				case '0':
+					result += operand.getValue();
+					break;
+			}
 		}
 	}
-	public static String arrToStr(char[] charr) {
-		String s = "";
-		for (int i = 0; i < charr.length; i++) {
-			if (charr[i] == Character.MIN_VALUE)
-				continue;
-			s += (charr[i]);
-		}
-		return s;
-	}
+
 	public boolean inputIsValid() {
 		boolean arabic =false, roman = false;
 		String s = getStr();

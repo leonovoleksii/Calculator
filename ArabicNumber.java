@@ -2,6 +2,8 @@ public class ArabicNumber {
 	private int value;
 	public ArabicNumber(char[] str) {
 		int i = 0;
+		while (i < str.length && str[i] == Character.MIN_VALUE)
+			i++;
 		while ((i < str.length) && !(str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/')) {
 			value = value * 10 + (int)str[i] - (int)'0';
 			str[i] = Character.MIN_VALUE;
