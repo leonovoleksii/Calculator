@@ -14,21 +14,9 @@ public class Operand {
 		return value;
 	}
 
-	public static String arrToStr(char[] charr) {
-		String s = "";
-		for (int i = 0; i < charr.length; i++) {
-			s += (charr[i]);
-		}
-		return s;
-	}
-
 	public static void main(String[] args) {
 		String str = "123*345";
-		char[] arr = new char[str.length()];
-		arr = str.toCharArray();
-		Operand operand = new Operand(arr);
-		str = arrToStr(arr);
-		System.out.println(str);
+		Operand operand = new Operand(str.toCharArray());
 		System.out.println(operand.getValue());
 	}
 }
