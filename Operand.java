@@ -2,7 +2,7 @@ public class Operand {
 	private int value;
 	public Operand(char[] str) {
 		int i = 0;
-		while (!(str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/')) {
+		while (!(str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/') && !(i == str.length)) {
 			value = value * 10 + (int)str[i] - (int)'0';
 			str[i] = Character.MIN_VALUE;
 			i++;
