@@ -1,8 +1,15 @@
 package bin;
 
-public class ArabicNumber {
+public class ArabicNumber extends Num {
 	private int value;
+	private char[] str;
 	public ArabicNumber(char[] str) {
+		this.str = str;
+		super.str = str;
+		value = 0;
+	}
+	public int next() {
+		value = 0;
 		int i = 0;
 		//skip all void characters
 		while (i < str.length && str[i] == Character.MIN_VALUE)
@@ -14,13 +21,22 @@ public class ArabicNumber {
 			str[i] = Character.MIN_VALUE;
 			i++;
 		}
+		return value;
 	}
+
 	public int getValue() {
 		return value;
 	}
 
 	public static void main(String[] args) {
-		ArabicNumber num = new ArabicNumber("123".toCharArray());
-		System.out.println(num.getValue());
+		char[] charr = "123+1223-1234".toCharArray();
+		ArabicNumber num = new ArabicNumber(charr);
+		System.out.println(num.next());
+		System.out.println(num.sign());
+		System.out.println(num.next());
+		System.out.println(num.sign());
+		System.out.println(num.next());
+		System.out.println(num.sign());
+
 	}
 }

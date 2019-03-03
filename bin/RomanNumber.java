@@ -1,8 +1,15 @@
 package bin;
 
-public class RomanNumber {
+public class RomanNumber extends Num {
 	private int value;
+	private char[] str;
 	public RomanNumber(char[] str) {
+		value = 0;
+		super.str = str;
+		this.str = str;
+	}
+	public int next() {
+		value = 0;
 		int i = 0;
 		//skip all void characters
 		while (i < str.length && str[i] == Character.MIN_VALUE)
@@ -43,15 +50,16 @@ public class RomanNumber {
 					break;
 			}
 		}
+		return value;
 	}
 	public int getValue() {
 		return value;
 	}
 
 	public static void main(String[] args) {
-		char[] charr = "IV".toCharArray();
+		char[] charr = "II+III".toCharArray();
 		RomanNumber num = new RomanNumber(charr);
-		System.out.println(num.getValue());
-		System.out.println(charr);
+		System.out.println(num.next());
+		System.out.println(num.sign());
 	}
 }
