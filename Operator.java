@@ -14,8 +14,10 @@ public class Operator {
 	}
 
 	public static void main(String[] args) {
-		String str = "+1234";
-		Operator operator = new Operator(str.toCharArray());
+		char[] charr = {Character.MIN_VALUE, Character.MIN_VALUE, '+', 'I', 'I', '*', 'I', 'I', 'I', '/', 
+		'I', 'V', '+', 'V', 'I', 'I', '*', 'X', 'V'};
+		Operator operator = new Operator(charr);
 		System.out.println(operator.getValue());
+		System.out.println(charr);
 	}
 }

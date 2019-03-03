@@ -14,18 +14,17 @@ public class Calculator {
 	public double getRes() {
 		return result;
 	}
-	public void calculate() {
+	public void calculate(boolean isRoman) {
 		char charr[] = getStr().toCharArray();
 		int i = 0;
 		while (i < charr.length) {
 			Operator operator = new Operator(charr);
 			while (i < charr.length && charr[i] == Character.MIN_VALUE)
 				i++;
-			char op = operator.getValue();
-			Operand operand = new Operand(charr);
+			Operand operand = new Operand(charr, isRoman);
 			while (i < charr.length && charr[i] == Character.MIN_VALUE)
 				i++;
-			switch (op){
+			switch (operator.getValue()){
 				case '+':
 					result += operand.getValue();
 					break;
@@ -52,6 +51,16 @@ public class Calculator {
 		return (arabic^roman);
 	}
 
+	public boolean isRoman() {
+		String s = getStr();
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (c == 'I' || c == 'V' || c == 'X')
+				return true;
+		}
+		return false;
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Hello! I am calculator! What would you like to calculate?");
 		while (true) {
@@ -61,7 +70,7 @@ public class Calculator {
 			if (calculator.getStr().equals("q"))
 				break;
 			if (calculator.inputIsValid()) {
-				calculator.calculate();
+				calculator.calculate(calculator.isRoman());
 				System.out.println("Answer is: " + calculator.getRes());
 			} else {
 				System.out.println("Your input is invalid!");
