@@ -4,10 +4,12 @@ public class Operator {
 	private char value = '0';
 	public Operator(char[] charr) {
 		int i = 0;
+		//skip all void characters
 		while (i < charr.length && charr[i] == Character.MIN_VALUE)
 			i++;
 		if (i < charr.length && (charr[i] == '+' || charr[i] =='-')) {
 			value = charr[i];
+			//delete operator
 			charr[i] = Character.MIN_VALUE;
 		}
 	}

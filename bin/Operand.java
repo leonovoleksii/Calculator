@@ -1,8 +1,10 @@
 package bin;
 
+//operand is the result of multiplication or division
 public class Operand {
 	private double value = 0;
 	public Operand(char[] str, boolean isRoman) {
+		//if numbers are in roman format act like roman number
 		if (isRoman) {
 			RomanNumber number = new RomanNumber(str);
 			value = number.getValue();
@@ -19,7 +21,7 @@ public class Operand {
 				}
 				sgn = sign(str);
 			}
-		} else {
+		} else { //if numbers are in arabic format act like roman number
 			ArabicNumber number = new ArabicNumber(str);
 			value = number.getValue();
 			char sgn = sign(str);

@@ -18,13 +18,19 @@ public class Calculator {
 	public void calculate(boolean isRoman) {
 		char charr[] = getStr().toCharArray();
 		int i = 0;
+		//while there is something to calculate
 		while (i < charr.length) {
+			//get next operator
 			Operator operator = new Operator(charr);
+			//skip all void charaters
 			while (i < charr.length && charr[i] == Character.MIN_VALUE)
 				i++;
+			//get next operand
 			Operand operand = new Operand(charr, isRoman);
+			//skip all void characters
 			while (i < charr.length && charr[i] == Character.MIN_VALUE)
 				i++;
+			//add or substract operand to/from value
 			switch (operator.getValue()){
 				case '+':
 					result += operand.getValue();
@@ -49,6 +55,7 @@ public class Calculator {
 			else if ((int)c >= (int)'0' && (int)c <= (int)'9')
 				arabic = true;
 		}
+		//return true if only arabic or only roman type
 		return (arabic^roman);
 	}
 
