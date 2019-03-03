@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import bin.*;
 
 public class Calculator {
 	private String str;
