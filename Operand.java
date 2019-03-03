@@ -6,13 +6,13 @@ public class Operand {
 			value = number.getValue();
 			char sgn = sign(str);
 			while (sgn != '-' && sgn != '+' && sgn != '0') {
-				RomanNumber number2 = new RomanNumber(str);
+				number = new RomanNumber(str);
 				switch(sgn) {
 					case '*':
-						value *= number2.getValue();
+						value *= number.getValue();
 						break;
 					case '/':
-						value /= number2.getValue();
+						value /= number.getValue();
 						break;
 				}
 				sgn = sign(str);
@@ -22,13 +22,13 @@ public class Operand {
 			value = number.getValue();
 			char sgn = sign(str);
 			while (sgn != '-' && sgn != '+' && sgn != '0') {
-				ArabicNumber number2 = new ArabicNumber(str);
+				number = new ArabicNumber(str);
 				switch(sgn) {
 					case '*':
-						value *= number2.getValue();
+						value *= number.getValue();
 						break;
 					case '/':
-						value /= number2.getValue();
+						value /= number.getValue();
 						break;
 				}
 				sgn = sign(str);
