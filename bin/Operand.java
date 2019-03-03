@@ -34,22 +34,6 @@ public class Operand {
 		return value;
 	}
 
-	public static char sign(char[] str) {
-		char sgn = '0';
-		int i = 0;
-		while (i < str.length) {
-			char c = str[i];
-			if (sgn == '0' && (c == '*' || c == '/' || c == '+' || c == '-')) {
-				sgn = c;
-				if (c == '*' || c == '/') {
-					str[i] = Character.MIN_VALUE;
-				}
-			}
-			i++;
-		}
-		return sgn;
-	}
-
 	public static void main(String[] args) {
 		Operand op = new Operand("II*II*III-V".toCharArray(), true);
 		System.out.println(op.getValue());
