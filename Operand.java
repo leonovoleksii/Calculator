@@ -21,7 +21,6 @@ public class Operand {
 			ArabicNumber number = new ArabicNumber(str);
 			value = number.getValue();
 			char sgn = sign(str);
-			System.out.println(str);
 			while (sgn != '-' && sgn != '+' && sgn != '0') {
 				ArabicNumber number2 = new ArabicNumber(str);
 				switch(sgn) {
