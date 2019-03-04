@@ -63,7 +63,7 @@ public class Calculator {
 		String s = getStr();
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
-			if (c == 'I' || c == 'V' || c == 'X')
+			if (c == 'I' || c == 'V' || c == 'X' || c == 'L' || c == 'C' || c == 'M')
 				return true;
 		}
 		return false;
