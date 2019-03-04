@@ -83,7 +83,7 @@ public class Calculator {
 			} else {
 				System.out.println("Your input is invalid!");
 			}
-			System.out.println("To quit the program enter press q");
+			System.out.println("To quit the program enter q");
 		}
 	}
 }
