@@ -50,7 +50,7 @@ public class Calculator {
 		String s = getStr();
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
-			if (c == 'I' || c == 'V' || c == 'X') 
+			if (c == 'I' || c == 'V' || c == 'X' || c == 'L' || c == 'C' || c == 'M') 
 				roman = true;
 			else if ((int)c >= (int)'0' && (int)c <= (int)'9')
 				arabic = true;
