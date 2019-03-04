@@ -32,6 +32,26 @@ public class RomanNumber extends Num {
 							//delete digit
 							str[i + 1] = Character.MIN_VALUE;
 							i++;
+						} else if (str[i + 1] == 'L') {
+							value += 48;
+							//delete digit
+							str[i + 1] = Character.MIN_VALUE;
+							i++;
+						} else if (str[i + 1] == 'C') {
+							value += 98;
+							//delete digit
+							str[i + 1] = Character.MIN_VALUE;
+							i++;
+						} else if (str[i + 1] == 'D') {
+							value += 498;
+							//delete digit
+							str[i + 1] = Character.MIN_VALUE;
+							i++;
+						} else if (str[i + 1] == 'M') {
+							value += 998;
+							//delete digit
+							str[i + 1] = Character.MIN_VALUE;
+							i++;
 						}
 					}
 					i++;
@@ -45,8 +65,68 @@ public class RomanNumber extends Num {
 				case 'X':
 					//delete digit
 					str[i] = Character.MIN_VALUE;
+					if (i + 1 < str.length) {
+						if (str[i + 1] == 'L') {
+							value += 30;
+							//delete digit
+							str[i + 1] = Character.MIN_VALUE;
+							i++;
+						} else if (str[i + 1] == 'C') {
+							value += 80;
+							//delete digit
+							str[i + 1] = Character.MIN_VALUE;
+							i++;
+						} else if (str[i + 1] == 'D') {
+							value += 480;
+							//delete digit
+							str[i + 1] = Character.MIN_VALUE;
+							i++;
+						} else if (str[i + 1] == 'M') {
+							value += 980;
+							//delete digit
+							str[i + 1] = Character.MIN_VALUE;
+							i++;
+						}
+					}
 					i++;
 					value += 10;
+					break;
+				case 'L':
+					//delete digit
+					str[i] = Character.MIN_VALUE;
+					i++;
+					value += 50;
+					break;
+				case 'C':
+					//delete digit
+					str[i] = Character.MIN_VALUE;
+					if (i + 1 < str.length) {
+						if (str[i + 1] == 'D') {
+							value += 300;
+							//delete digit
+							str[i + 1] = Character.MIN_VALUE;
+							i++;
+						} else if (str[i + 1] == 'M') {
+							value += 800;
+							//delete digit
+							str[i + 1] = Character.MIN_VALUE;
+							i++;
+						}
+					}
+					i++;
+					value += 100;
+					break;
+				case 'D':
+					//delete digit
+					str[i] = Character.MIN_VALUE;
+					i++;
+					value += 500;
+					break;
+				case 'M':
+					//delete digit
+					str[i] = Character.MIN_VALUE;
+					i++;
+					value += 1000;
 					break;
 			}
 		}
